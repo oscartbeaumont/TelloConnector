@@ -1,0 +1,22 @@
+{
+  "name": "TelloConnector",
+  "version": "1.0.0",
+  "description": "An Easy To Use Connector Between The Tello Drone And The Scratch Programming Language",
+  "main": "app.js",
+  "repository": "https://github.com/oscarbeaumont/TelloConnector",
+  "author": "Oscar Beaumont <oscartbeaumont@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "menubar": "^5.2.3",
+    "tello-api-client": "^0.0.4"
+  },
+  "scripts": {
+    "start": "electron app.js",
+    "build-mac": "electron-packager . TelloConnector --icon icon.icns --platform=darwin"
+  },
+  "devDependencies": {
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1"
+  }
+}

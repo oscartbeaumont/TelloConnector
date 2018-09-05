@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Tello Connector</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+  body {
+    background-color: #333333;
+  }
+
+  h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+
+  .title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .land {
+    width: 90%;
+    height: 40px;
+    font-size: 30px;
+    color: #525354;
+  }
+
+  .land {
+    width: 49%;
+    display: inline-block;
+  }
+  </style>
+</head>
+<body>
+  <h1 class="title">Tello Connector</h1>
+  <center>
+    <button type="button" class="land" id="land-btn">Land</button>
+    <button type="button" class="land" id="exit-btn">Exit</button>
+  </center>
+
+  <script>
+  const electron = require('electron').remote;
+
+  var btnLand = document.getElementById("land-btn");
+  var btnExit = document.getElementById("exit-btn");
+
+  btnLand.addEventListener("click", function(e) {
+    electron.getGlobal('drone').land();
+  });
+
+  btnExit.addEventListener("click", function(e) {
+    electron.app.exit();
+  });
+  </script>
+</body>
+</html>
